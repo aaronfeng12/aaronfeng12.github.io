@@ -10,59 +10,95 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<style>
+			.hidden {
+				display: none;
+			}
+		</style>
+		<script>
+			
+
+			function showSection(sectionId) {
+				// Hide all sections
+				$('section').hide();
+				// Show the selected section
+				$('#' + sectionId).show();
+    		}
+
+			// Ensure only the profile section is visible on page load
+			$(document).ready(function() {
+				// Hide all sections initially
+				$('section').hide();
+				// Show the profile section by default
+				$('#profile').show();
+			});
+		</script>
+	
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper" class="divided">			
+		<div id="wrapper" class="divided">			
 
-				<!-- One -->
-					<section class="banner style3 orient-left content-align-left image-position-right onload-image-fade-in onload-content-fade-right">
-						<div class="content">
-							<h1>Aaron Feng</h1>
-							<p class="major">
-								<p>I'm currently a graduate student studying Mechanical Engineering at the University of 
-									Michigan Ann Arbor. Growing up, I witnessed the development and technical breakthroughs of reusable 
-									rockets, private spaceflight, robotic interplanetary exploration, sustainable 
-									transportation, and more. This led me to develop a strong passion for engineering, a desire to push the 
-									boundaries of what is possible, and to create a lasting impact on society. 
-								</p>
-								<p>Throughout my extensive work experiences in the aerospace
-									and automotive industries, I have gained skills and perspectives in many aspects of engineering, 
-									including design, analysis/simulation, software, and 
-									manufacturing. This portfolio details those, as well as some of the other projects that I've worked on.
-								</p>  
-								
-								<footer class="wrapper style1 align-center">
-									<div class="inner">
-										<ul class="icons">
-											<li><a href="https://www.linkedin.com/in/aaron-feng/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											<li><a href="mailto:aaronfeng12@gmail.com" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
-										</ul>
-										<a href="images/Resume_AaronFeng.pdf" class="button big wide smooth-scroll-center">My Resume</a></li>
-									</div>
-								</footer>
-							
-						</div>
-						<div class="image">
-							<img src="images/banner.png" alt="" />
-						</div>
-					</section>
-
-				<!-- Section 1 -->
-				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
-					<div class="content">
-						<h2>Experience</h2>
-						<p>A summary of my work experience. 
-						</p>
-						
-					</div>
+			<!-- Header -->
+			<header id="header">
+				<nav>
+					<ul>
+						<li><a href="#" onclick="showSection('profile')">Profile</a></li>
+                    	<li><a href="#" onclick="showSection('experience')">Experience</a></li>
+                    	<li><a href="#" onclick="showSection('projects')">Projects</a></li>
+						<li><a href="#" onclick="showSection('education')">Education</a></li>
+                    	<li><a href="#" onclick="showSection('skills')">Skills</a></li>
 					
-				</section>
+					</ul>
+				</nav>
+			</header>
 
+			<section id="profile" section class="banner style3 fullscreen orient-left content-align-left image-position-right onload-image-fade-in onload-content-fade-right">
+				<div class="content">
+					<h1>Aaron Feng</h1>
+					<p class="major">
+						<p>I'm currently a graduate student studying Mechanical Engineering at the University of 
+							Michigan Ann Arbor. Growing up, I witnessed the development and technical breakthroughs of reusable 
+							rockets, private spaceflight, robotic interplanetary exploration, sustainable 
+							transportation, and more. This led me to develop a strong passion for engineering, a desire to push the 
+							boundaries of what is possible, and to create a lasting impact on society. 
+						</p>
+						<p>Throughout my extensive work experiences in the aerospace
+							and automotive industries, I have gained skills and perspectives in many aspects of engineering, 
+							including design, analysis/simulation, software, and 
+							manufacturing. This portfolio details those, as well as some of the other projects that I've worked on.
+						</p>  
+							
+						
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/aaron-feng/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="mailto:aaronfeng12@gmail.com" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<a href="images/Resume_AaronFeng.pdf" class="button big wide smooth-scroll-center">My Resume</a></li>
+						</div>
+						
+						<p></p>
+						<p>Template from <a href="https://html5up.net">HTML5 UP</a>.</p>
+						
+				</div>
+				
+				<div class="image">
+					<img src="images/banner.png" alt="" />
+				</div>
+
+				
+				
+			</section>
+
+
+			<section id="experience">
+				
 				<!-- Relativity -->
-				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+				<div class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
 					<div class="content">
 						<h2>Relativity Space / Thermal Engineering Intern</h2>
 						<p>
@@ -72,16 +108,17 @@
 							and implemented a simulation post processing tool for heat flow between thermal subgroups.
 							I also created and analyzed thermal models of the Terran R throttle valve actuator, cables, 
 							and TPS.
-							
 						</p>
 					</div>
+
 					<div class="image">
 						<img src="images/relativity.png" alt="" />
 					</div>
-				</section>
+
+				</div>
 
 				<!-- GSI -->
-				<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+				<div class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 					<div class="content">
 						<h2>University of Michigan / Graduate Student Instructor</h2>
 						<p>
@@ -97,10 +134,10 @@
 					<div class="image">
 						<img src="images/gsi2.png" alt="" />
 					</div>
-				</section>
-
+				</div>
+				
 				<!-- Rivian -->
-				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+				<div class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 					<div class="content">
 						<h2>Rivian / Aerothermal Systems Engineering Intern</h2>
 						<p>
@@ -111,16 +148,16 @@
 							Furthermore, I developed long term insulation pack by optimizing insulation location and R-value,
 							and determined evaporator cooling power required for varying ambient conditions, for human comfort/safety in EDV cargo compartment.
 							I quantified benefits of different EDV roof colors, conducted material stack configuration, fan characterization testing. 
-							  
+								
 						</p>
 					</div>
 					<div class="image">
 						<img src="images/rivian.png" alt="" />
 					</div>
-				</section>
+				</div>
 
 				<!-- Tesla -->
-				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+				<div class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
 					<div class="content">
 						<h2>Tesla / Manufacturing Engineering Intern</h2>
 						<p>
@@ -136,10 +173,10 @@
 					<div class="image">
 						<img src="images/tesla2.png" alt="" />
 					</div>
-				</section>
+				</div>
 
 				<!-- H.A. -->
-				<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="first">
+				<div class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="first">
 					<div class="content">
 						<h2>H.A. Automotive Systems / Design Engineering Intern</h2>
 						<p>
@@ -154,21 +191,15 @@
 					<div class="image">
 						<img src="images/ha.png" alt="" />
 					</div>
-				</section>
+				</div>
+	
+			</section>
 
-				<!-- Section 2 -->
-				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
-					<div class="content">
-						<h2>Projects</h2>
-						<p>A summary of some projects that I've worked on for courses or for fun.
-						</p>
-						
-					</div>
-					
-				</section>
+
+			<section id="projects">
 
 				<!-- ME553 -->
-				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+				<div class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 					<div class="content">
 						<h2>Electrospray Space Microthruster</h2>
 						<p>
@@ -179,15 +210,15 @@
 							that can achieve higher thrust densities and exploit geometric trends. 
 							A microthruster was proposed/sized to meet mass, thrust, specific impulse, and input voltage specifications for a lunar cubesat.
 						</p>
-						
+							
 					</div>
 					<div class="image">
 						<img src="images/553.png" alt="" />
 					</div>
-				</section>
+				</div>
 
 				<!-- ME250 -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="first">
+					<div class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="first">
 						<div class="content">
 							<h2>Robot Machine Player</h2>
 							<p>A remote-controlled robot that was designed and manufactured to compete and win the ME250 (Design & Manufacturing I) competition. 
@@ -197,15 +228,15 @@
 								Extensive waterjetting, laser cutting, and mill/lathe was used, in addition to 3D printing for rapid iteration.
 								Mechanisms used included rollers and a conveyor belt.
 							</p>
-							
+								
 						</div>
 						<div class="image">
 							<img src="images/250gif3.gif" alt="" />
 						</div>
-					</section>
+					</div>
 
 				<!-- ME350 -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+					<div class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
 							<h2>Mechatronics Linkage</h2>
 							<p> A four-bar linkage that was designed and manufactured to compete and win the ME350 (Design & Manufacturing II) competition. 
@@ -215,17 +246,17 @@
 								location and orientation. The team designed and simulated a lightweight system that was rigid, consistent/simple to setup, 
 								minimized rotational inertia and traversal time, and had a relatively low transmission angle deviation. 
 								Calibration was performed using a limit switch and accounted for hysteresis. 
-								 
+									
 							</p>
-							
+								
 						</div>
 						<div class="image">
 							<img src="images/350gif.gif" alt="" />
 						</div>
-					</section>
+					</div>
 
 				<!-- Drone -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+					<div class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
 							<h2>Drone</h2>
 							<p> A 3D printed drone for aerial photography, designed for stability, long endurance, and heavy modular payloads. 
@@ -234,15 +265,15 @@
 								Potential future work could involve autonomous/preplanned flights. 
 								Like most engineering projects, it's heavily delayed - manufacturing is still in progress.
 							</p>
-							
+								
 						</div>
 						<div class="image">
 							<img src="images/drone.png" alt="" />
 						</div>
-					</section>
+					</div>
 
 				<!-- ENTR -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+					<div class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
 							<h2>Smart Sink</h2>
 							<p> Smart, low cost faucet attachment that measures the water rate and volume through a faucet.
@@ -250,185 +281,224 @@
 								to a user-friendly Android app. The objective was to reduce water consumption through improved 
 								monitoring and awareness (ironically, a lot of water was used in order to validate the prototype). 
 							</p>
-							
+								
 						</div>
-					<div class="image">
-						<img src="images/entr.PNG" alt="" />
+						<div class="image">
+							<img src="images/entr.PNG" alt="" />
+						</div>
+					</div>
+
+			</section>
+
+			<section id="education" section class="wrapper style1 align-left">
+					<div class="inner">
+						<h2>Education</h2>	
+						<h2>MSE Mechanical Engineering, University of Michigan Ann Arbor</h2>
+						<p>
+						(Jan 2024 - Dec 2024)
+						<p>
+							Digital Control Systems, Finite Element Methods in MEAM, Adv Batteries, Experimental Design, Microelectromechanical Systems, Design Optimization, Robotic Kinematics & Dynamics (GPA: 4.00)
+						</p>
+						<h2>BSE Mechanical Engineering, University of Michigan Ann Arbor</h2>
+						<p>
+						(Aug 2021 - Dec 2023)
+						<p>
+							Adv Energy Sol, Sustainable Eng, Solar Thermal Sys, Research (GPA: 3.97)
+						</p>
+
+						<h2>BS Aerospace Engineering (transferred), University of Illinois Urbana-Champaign	</h2>
+						<p>
+						(Jun 2019 - May 2021)
+						<p>
+							Discrete Structures, Data Structures, Flight Mechanics, Mechanics of Aerospace Structures, Incompressible Flow, Computer Architecture, Numerical Methods, Algorithms (GPA: 3.80) 
+						</p>
+
 					</div>
 				</section>
+			</section>
 
-				<!-- Section 3 -->
-					<section class="wrapper style1 align-left">
-						<div class="inner">
-							<h2>Education</h2>
-							
-							<h2>MSE Mechanical Engineering, University of Michigan Ann Arbor</h2>
-							<p>
-							(Jan 2024 - Dec 2024)
-							<p>
-								Digital Control Systems, Finite Element Methods in MEAM, Adv Batteries, Experimental Design, Microelectromechanical Systems, Design Optimization, Robotic Kinematics & Dynamics (GPA: 4.00)
-							</p>
-
-							<h2>BSE Mechanical Engineering, University of Michigan Ann Arbor</h2>
-							<p>
-							(Aug 2021 - Dec 2023)
-							<p>
-								Adv Energy Sol, Sustainable Eng, Solar Thermal Sys, Research (GPA: 3.97)
-							</p>
-
-							<h2>BS Aerospace Engineering (transferred), University of Illinois Urbana-Champaign	</h2>
-							<p>
-							(Jun 2019 - May 2021)
-							<p>
-								Discrete Structures, Data Structures, Flight Mechanics, Mechanics of Aerospace Structures, Incompressible Flow, Computer Architecture, Numerical Methods, Algorithms (GPA: 3.80) 
-							</p>
-
-						</div>
-					</section>
-						
-				<!-- Section 4 -->
-					<section class="wrapper style1 align-center">
-						<div class="inner">
-							<h2>Skills</h2>
-							
-							<div class="items style1 small onscroll-fade-in">
-								<section>
-									<span class="icon solid style2 major fa-code"></span>
-									<h3>C++</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-code"></span>
-									<h3>Java</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-chart-bar"></span>
-									<h3>Python</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-code"></span>
-									<h3>JavaScript</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-chart-bar"></span>
-									<h3>MATLAB</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-bolt"></span>
-									<h3>TensorFlow</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>NX</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>CATIA</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>SolidWorks</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>Fusion360</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>AutoCad</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>ANSA</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-keyboard"></span>
-									<h3>Thermal Desktop</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-keyboard"></span>
-									<h3>Ansys</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-keyboard"></span>
-									<h3>TaiTherm</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-keyboard"></span>
-									<h3>StarCCM+</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-keyboard"></span>
-									<h3>Adams</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-keyboard"></span>
-									<h3>COMSOL</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-satellite"></span>
-									<h3>STK</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-sitemap"></span>
-									<h3>EAGLE</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-cogs"></span>
-									<h3>Mill</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-cogs"></span>
-									<h3>Lathe</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-cogs"></span>
-									<h3>Laser Cutting</h3>
-									
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-cogs"></span>
-									<h3>3D Printing</h3>
-									
-								</section>
-							</div>
-						</div>
-					</section>
+			
 
 				
-
-				<!-- Footer -->
-					<footer class="wrapper style1 align-center">
-						<div class="inner">
+			<section id="projects1" style="display: none;">
+				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+					<div class="content">
+						<h2>Projects</h2>
+						<p>A summary of some projects that I've worked on for courses or for fun.
+						</p>
 							
-							<p>Template from <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</div>
+						
+				</section>
+			</section>
+
+			<section id="education1" style="display: none;">
+				<section class="wrapper style1 align-left">
+					<div class="inner">
+						<h2>Education</h2>
+							
+						<h2>MSE Mechanical Engineering, University of Michigan Ann Arbor</h2>
+						<p>
+						(Jan 2024 - Dec 2024)
+						<p>
+							Digital Control Systems, Finite Element Methods in MEAM, Adv Batteries, Experimental Design, Microelectromechanical Systems, Design Optimization, Robotic Kinematics & Dynamics (GPA: 4.00)
+						</p>
+						<h2>BSE Mechanical Engineering, University of Michigan Ann Arbor</h2>
+						<p>
+						(Aug 2021 - Dec 2023)
+						<p>
+							Adv Energy Sol, Sustainable Eng, Solar Thermal Sys, Research (GPA: 3.97)
+						</p>
+
+						<h2>BS Aerospace Engineering (transferred), University of Illinois Urbana-Champaign	</h2>
+						<p>
+						(Jun 2019 - May 2021)
+						<p>
+							Discrete Structures, Data Structures, Flight Mechanics, Mechanics of Aerospace Structures, Incompressible Flow, Computer Architecture, Numerical Methods, Algorithms (GPA: 3.80) 
+						</p>
+
+					</div>
+				</section>
+			</section>
+						
+
+			
+			<section id="skills">
+				<div class="wrapper style1 align-center">
+					<div class="items style1 small">
+						<div>
+							<span class="icon solid style2 major fa-code"></span>
+							<h3>C++</h3>
+									
 						</div>
-					</footer>
+						<div>
+							<span class="icon solid style2 major fa-code"></span>
+							<h3>Java</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-chart-bar"></span>
+							<h3>Python</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-code"></span>
+							<h3>JavaScript</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-chart-bar"></span>
+							<h3>MATLAB</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-bolt"></span>
+							<h3>TensorFlow</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-desktop"></span>
+							<h3>NX</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-desktop"></span>
+							<h3>CATIA</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-desktop"></span>
+							<h3>SolidWorks</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-desktop"></span>
+							<h3>Fusion360</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-desktop"></span>
+							<h3>AutoCad</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-desktop"></span>
+							<h3>ANSA</h3>
+								
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-keyboard"></span>
+							<h3>Thermal Desktop</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-keyboard"></span>
+							<h3>Ansys</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-keyboard"></span>
+							<h3>TaiTherm</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-keyboard"></span>
+							<h3>StarCCM+</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-keyboard"></span>
+							<h3>Adams</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-keyboard"></span>
+							<h3>COMSOL</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-satellite"></span>
+							<h3>STK</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-sitemap"></span>
+							<h3>EAGLE</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-cogs"></span>
+							<h3>Mill</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-cogs"></span>
+							<h3>Lathe</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-cogs"></span>
+							<h3>Laser Cutting</h3>
+									
+						</div>
+						<div>
+							<span class="icon solid style2 major fa-cogs"></span>
+							<h3>3D Printing</h3>
+									
+						</div>
+					</div>
+			
+				</div>
+			</section>
+				
+
+			
 
 			</div>
 
 		<!-- Scripts -->
+			
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -437,5 +507,8 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			
+
+			
 	</body>
 </html>
