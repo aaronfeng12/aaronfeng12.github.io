@@ -8634,6 +8634,7 @@ input, select, textarea {
 		#header > nav > ul {
 			margin: 0;
 			padding: 0;
+			list-style-type: none; /* Remove bullet points */
 		}
 
 			#header > nav > ul > li {
@@ -8697,7 +8698,6 @@ input, select, textarea {
 			}
 
 			#header > nav > ul {
-				display: block; /* Ensure it stacks vertically on very small screens */
 				text-align: center; /* Center the menu options on small screens */
 			}
 
